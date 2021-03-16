@@ -1,0 +1,23 @@
+* {
+    box-sizing: border-box;
+}
+@font-face {
+    font-family: 'game_of_thronesregular';
+    src: url('./game_of_thrones-webfont.woff2') format('woff2'),
+         url('./game_of_thrones-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+body {
+    background: url("./img/got-background.jpg") no-repeat center center fixed; 
+    background-size: cover;
+}
+
+
+#title {
+    font-family: 'game_of_thronesregular', 'Cinzel Decorative', cursive;
+    font-size: 64px;
+    text-align: center;
+    color: #fff;
+    margin-top: 3%;
+}
