@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 function Timer() {
+  const [time, setTime] = useState(0);
+
+
   return (
     <div>
       Timer
-      <span id="countdown"></span>
+      <span id="countdown"> 0:00</span>
     </div>
   )
 }
