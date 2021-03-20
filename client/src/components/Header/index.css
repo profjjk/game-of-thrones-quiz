@@ -1,0 +1,32 @@
+#title {
+  font-family: 'game_of_thronesregular', 'Cinzel Decorative', cursive;
+  font-size: 64px;
+  text-align: center;
+  color: #fff;
+  margin-top: 3%;
+}
+#subtitle {
+  font-family: 'Cinzel Decorative', cursive;
+  font-size: 32px;
+  text-align: center;
+  color: #fff;
+  margin-top: 1%;
+}
+#timer {
+  font-family: 'Cinzel Decorative', cursive;
+  font-size: 24px;
+  font-weight: 700;
+  color: #fff;
+  float: right;
+}
+#scoreboard {
+  font-family: 'Cinzel Decorative', cursive;
+  font-size: 24px;
+  font-weight: 700;
+  background: none;
+  border: none;
+  color: #fff;
+}
+#scoreboard:hover {
+  cursor: pointer;
+}

@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import TopBar from '../components/TopBar';
+import Header from '../components/Header';
 
 function Game() {
   return (
     <>
-    <TopBar />
+    <Header />
     </>
   )
 }

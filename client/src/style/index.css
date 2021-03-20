@@ -13,11 +13,14 @@ body {
     background-size: cover;
 }
 
-
-#title {
-    font-family: 'game_of_thronesregular', 'Cinzel Decorative', cursive;
-    font-size: 64px;
-    text-align: center;
-    color: #fff;
-    margin-top: 3%;
+.container {
+    padding: 1% 10%;
 }
+
+
+
+/* 
+font-family: 'Cinzel Decorative', cursive;
+font-family: 'Crimson Text', serif;
+font-family: 'Inconsolata', monospace;
+*/
