@@ -1,0 +1,19 @@
+#welcome-container {
+  text-align: center;
+}
+#welcome {
+  font-family: 'Cinzel Decorative', cursive;
+  font-size: 36px;
+  margin: 50px;
+}
+#instructions {
+  font-family: 'Crimson Text', serif;
+  font-size: 28px;
+  margin-top: 50px;
+}
+#begin {
+  font-family: 'Crimson Text', serif;
+  font-size: 36px;
+  width: 150px;
+  margin: 50px;
+}

@@ -5,3 +5,7 @@
   color: #fff;
   float: right;
 }
+#countdown {
+  font-family: 'Inconsolata', monospace;
+  font-size: 28px;
+}
