@@ -12,13 +12,19 @@ body {
     background: url("./img/got-background.jpg") no-repeat center center fixed; 
     background-size: cover;
 }
-
 .container {
     padding: 1% 15%;
 }
-
+.btn {
+    border-radius: 10px;
+    outline: none;
+}
 .btn:hover {
     cursor: pointer;
+}
+.btn:active {
+    background: black;
+    color: white;
 }
 
 
