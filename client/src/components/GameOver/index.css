@@ -1,0 +1,17 @@
+#form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+input {
+  font-size: 1.3em;
+  height: 40px;
+  width: 40%;
+  border-radius: 10px;
+  padding: 10px;
+}
+.submit {
+  font-size: 1.4em;
+  margin-left: 10px;
+  padding: 6px 10px;
+}

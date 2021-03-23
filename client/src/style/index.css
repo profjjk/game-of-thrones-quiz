@@ -9,15 +9,19 @@
     font-style: normal;
 }
 body {
+    font-family: 'Crimson Text', serif;
     background: url("./img/got-background.jpg") no-repeat center center fixed; 
     background-size: cover;
 }
 .container {
     padding: 1% 15%;
 }
+
+/* BUTTONS */
 .btn {
     border-radius: 10px;
     outline: none;
+    padding: 4px 15px;
 }
 .btn:hover {
     cursor: pointer;
@@ -31,6 +35,23 @@ body {
     border-style: solid;
     border-color: black;
     border-width: 2px;
+}
+
+/* TEXT STYLES */
+.fancy {
+    font-family: 'Cinzel Decorative', cursive;
+}
+.small {
+    font-size: 1.5em;
+}
+.medium {
+    font-size: 2em;
+}
+.large {
+    font-size: 3em;
+}
+.center {
+    text-align: center;
 }
 
 
