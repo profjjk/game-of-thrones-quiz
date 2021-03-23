@@ -1,30 +1,47 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import './index.css';
-import quiz from '../../utils/questions.json';
 
-function Quiz() {
-  const [questions, setQuestions] = useState([]);
+function Quiz(props) {
   const [progress, setProgress] = useState(0);
+  const [score, setScore] = useState(0);
 
-  useEffect(() => {
-    let questions = quiz;
-    for (let i = questions.length - 1; i > 0; i--) {
-      let j = Math.floor(Math.random() * (i + 1));
-      let temp = questions[i];
-      questions[i] = questions[j];
-      questions[j] = temp;
+  const handleBtnClick = event => {
+    event.preventDefault();
+    if (progress < props.quizList.length - 1) {
+      console.log(event.currentTarget.value)
+      console.log(props.quizList[progress].correct)
+      if (event.currentTarget.value == props.quizList[progress].correct) {
+        setScore(score + props.quizList[progress].points)
+        console.log(score)
+      }
+      setProgress(progress + 1)
+    } else {
+      props.displayGameover();
     }
-    setQuestions(questions);
-    console.log(questions);
-  }, []);
+  }
 
   return (
     <>
-      <div className="question-area"></div>
+      <div className="question-area">
+        <h3 className="question">{props.quizList[progress].q}</h3>
+      </div>
       <hr/>
-      <div className="answer-area"></div>
+      <div className="answer-area">
+        {props.quizList[progress].a.map(answer => {
+          return (
+            <>
+              <button className="btn answer" onClick={handleBtnClick} value={answer} key={answer}>
+                {answer}
+              </button>
+              <br/>
+            </>
+          )
+        })}
+      </div>
       <hr/>
-      <div className="footnotes"></div>
+      <div className="footnote-area">
+        <p className="footnote">{props.quizList[progress].footnote}</p>
+      </div>
     </>
   )
 }
