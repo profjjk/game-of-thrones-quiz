@@ -1,14 +1,16 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import './index.css';
 
-function Timer() {
-  const [time, setTime] = useState(0);
+function Timer(props) {
+  let seconds = parseInt(props.time % 60, 10);
+  let minutes = parseInt(props.time / 60);
 
+  seconds = seconds < 10 ? '0' + seconds : seconds;
 
   return (
     <div id="timer">
-      Timer
-      <span id="countdown"> 0:00</span>
+      Timer 
+      <span id="countdown">{minutes}:{seconds}</span>
     </div>
   )
 }

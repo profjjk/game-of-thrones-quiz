@@ -6,43 +6,53 @@ import GameOver from '../GameOver';
 import ScoreBoard from '../ScoreBoard';
 import quiz from '../../utils/questions.json';
 
-const shuffle = array => {
-  let questions = array;
-  for (let i = questions.length - 1; i > 0; i--) {
-    let j = Math.floor(Math.random() * (i + 1));
-    let temp = questions[i];
-    questions[i] = questions[j];
-    questions[j] = temp;
-  }
-  return questions;
-}
-
-function GameBox() {
+function GameBox(props) {
   const [showWelcome, setShowWelcome] = useState(true);
   const [showQuiz, setShowQuiz] = useState(false);
   const [showGameover, setShowGameover] = useState(false);
   const [showScoreboard, setShowScoreboard] = useState(false);
-  const [quizList, setQuizList] = useState(shuffle(quiz));
+  const [quizList, setQuizList] = useState();
 
   const displayQuiz = () => {
     setShowWelcome(false);
     setShowQuiz(true);
+    props.setTimerActive(true);
   }
   const displayGameover = () => {
     setShowQuiz(false);
+    props.setTimerActive(false);
     setShowGameover(true);
   }
   const displayScoreboard = () => {
     setShowGameover(false);
+    setShowWelcome(false);
+    props.setTimerActive(false);
     setShowScoreboard(true);
   }
+
+  useEffect(() => {
+    let questions = quiz;
+    for (let i = questions.length - 1; i > 0; i--) {
+      let j = Math.floor(Math.random() * (i + 1));
+      let temp = questions[i];
+      questions[i] = questions[j];
+      questions[j] = temp;
+    }
+    setQuizList(questions);
+}, [])
+
+useEffect(() => {
+  if (props.time < 0) {
+    setShowGameover(true);
+  }
+}, [props.time])
 
   return (
     <div id="gamebox">
       { showWelcome ? <Welcome displayQuiz={displayQuiz} displayScoreboard={displayScoreboard} /> : "" }
-      { showQuiz ? <Quiz displayGameover={displayGameover} quizList={quizList} /> : "" }
-      { showGameover ? <GameOver displayScoreboard={displayScoreboard} /> : "" }
-      { showScoreboard ? <ScoreBoard /> : "" }
+      { showQuiz ? <Quiz displayGameover={displayGameover} quizList={quizList} wrongAnswer={props.wrongAnswer} updateScore={props.updateScore} /> : "" }
+      { showGameover ? <GameOver displayScoreboard={displayScoreboard} score={props.score} /> : "" }
+      { showScoreboard ? <ScoreBoard score={props.score} /> : "" }
     </div>
   )
 }

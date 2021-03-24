@@ -3,16 +3,15 @@ import './index.css';
 
 function Quiz(props) {
   const [progress, setProgress] = useState(0);
-  const [score, setScore] = useState(0);
 
   const handleBtnClick = event => {
     event.preventDefault();
+
     if (progress < props.quizList.length - 1) {
-      console.log(event.currentTarget.value)
-      console.log(props.quizList[progress].correct)
       if (event.currentTarget.value == props.quizList[progress].correct) {
-        setScore(score + props.quizList[progress].points)
-        console.log(score)
+        props.updateScore();
+      } else {
+        props.wrongAnswer();
       }
       setProgress(progress + 1)
     } else {
