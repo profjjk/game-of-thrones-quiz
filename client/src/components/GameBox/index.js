@@ -12,6 +12,7 @@ function GameBox(props) {
   const [showGameover, setShowGameover] = useState(false);
   const [showScoreboard, setShowScoreboard] = useState(false);
   const [quizList, setQuizList] = useState();
+  const [players, setPlayers] = useState();
 
   const displayQuiz = () => {
     setShowWelcome(false);
@@ -46,20 +47,35 @@ function GameBox(props) {
         setQuizList(scrambleQuiz(results.data));
       })
       .catch(err => console.error(err));
-}, []);
-
-useEffect(() => {
-  if (props.time < 0) {
-    setShowGameover(true);
+  }, []);
+  const mostRecent = arr => {
+    if (arr.length > 10) {
+      return arr.slice(0, 9);
+    } else {
+      return arr;
+    }
   }
-}, [props.time])
+
+  useEffect(() => {
+    if (props.time < 0) {
+      setShowGameover(true);
+    }
+  }, [props.time])
+
+  useEffect(() => {
+    API.getPlayers()
+      .then(results => {
+        console.log(results.data);
+        setPlayers(mostRecent(results.data))
+      }).catch(err => console.error(err));
+  }, [showScoreboard]);
 
   return (
     <div id="gamebox">
       { showWelcome ? <Welcome displayQuiz={displayQuiz} displayScoreboard={displayScoreboard} /> : "" }
       { showQuiz ? <Quiz displayGameover={displayGameover} quizList={quizList} wrongAnswer={props.wrongAnswer} updateScore={props.updateScore} /> : "" }
       { showGameover ? <GameOver displayScoreboard={displayScoreboard} score={props.score} /> : "" }
-      { showScoreboard ? <ScoreBoard score={props.score} /> : "" }
+      { showScoreboard ? <ScoreBoard score={props.score} players={players} /> : "" }
     </div>
   )
 }
