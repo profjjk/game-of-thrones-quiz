@@ -1,6 +1,7 @@
 import React, { useRef } from 'react';
 import './index.css';
 import questions from '../../utils/questions.json';
+import API from '../../utils/API';
 
 function GameOver(props) {
   const inputRef = useRef();
@@ -10,7 +11,11 @@ function GameOver(props) {
   const handleSubmit = event => {
     event.preventDefault();
     console.log(inputRef.current.value)
+    API.savePlayer({
+      name: inputRef.current.value
+    }).catch(err => console.error(err));
     inputRef.current.value = "";
+    // Show scoreboard
   }
 
   return (

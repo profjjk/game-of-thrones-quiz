@@ -4,7 +4,6 @@ import Welcome from '../Welcome';
 import Quiz from '../Quiz';
 import GameOver from '../GameOver';
 import ScoreBoard from '../ScoreBoard';
-import quiz from '../../utils/questions.json';
 import API from '../../utils/API';
 
 function GameBox(props) {
@@ -44,8 +43,7 @@ function GameBox(props) {
   useEffect(() => {
     API.getQuestions()
       .then(results => {
-        console.log(results);
-        setQuizList(results);
+        setQuizList(scrambleQuiz(results.data));
       })
       .catch(err => console.error(err));
 }, []);
