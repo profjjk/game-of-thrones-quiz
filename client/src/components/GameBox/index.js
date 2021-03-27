@@ -5,6 +5,7 @@ import Quiz from '../Quiz';
 import GameOver from '../GameOver';
 import ScoreBoard from '../ScoreBoard';
 import quiz from '../../utils/questions.json';
+import API from '../../utils/API';
 
 function GameBox(props) {
   const [showWelcome, setShowWelcome] = useState(true);
@@ -29,17 +30,25 @@ function GameBox(props) {
     props.setTimerActive(false);
     setShowScoreboard(true);
   }
-
-  useEffect(() => {
-    let questions = quiz;
+  const scrambleQuiz = arr => {
+    let questions = arr;
     for (let i = questions.length - 1; i > 0; i--) {
       let j = Math.floor(Math.random() * (i + 1));
       let temp = questions[i];
       questions[i] = questions[j];
       questions[j] = temp;
-    }
-    setQuizList(questions);
-}, [])
+    };
+    return questions;
+  };
+
+  useEffect(() => {
+    API.getQuestions()
+      .then(results => {
+        console.log(results);
+        setQuizList(results);
+      })
+      .catch(err => console.error(err));
+}, []);
 
 useEffect(() => {
   if (props.time < 0) {
