@@ -10,14 +10,14 @@ function GameOver(props) {
 
   const handleSubmit = event => {
     event.preventDefault();
-    console.log(inputRef.current.value)
     API.savePlayer({
       name: inputRef.current.value,
       score: Math.floor((props.score / totalPossible) * 100)
+    }).then(() => {
+      inputRef.current.value = "";
+      props.displayScoreboard();
     }).catch(err => console.error(err));
-    inputRef.current.value = "";
-    props.displayScoreboard();
-  }
+  };
 
   return (
     <div>

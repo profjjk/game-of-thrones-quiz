@@ -1,15 +1,14 @@
-import React, { useState, useEffect } from 'react';
-import API from '../../utils/API';
+import React from 'react';
+import './index.css';
 
 function Scoreboard(props) {
-  console.log(props);
 
   return (
-    <ul>
+    <div>
       {props.players.map(player => (
-        <li>{player.name} - {player.score}%</li>
+        <p className="player">{player.name} - {player.score}%</p>
       ))}
-    </ul>
+    </div>
   )
 }
 

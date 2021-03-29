@@ -57,10 +57,11 @@ function GameBox(props) {
 
   // Retrieve and limit players from database.
   const mostRecent = arr => {
-    if (arr.length > 10) {
-      return arr.slice(0, 9);
+    let array = arr.reverse()
+    if (array.length > 10) {
+      return array.slice(0, 10);
     } else {
-      return arr;
+      return array;
     }
   }
   useEffect(() => {
@@ -73,6 +74,8 @@ function GameBox(props) {
   // Show gameover when timer runs out.
   useEffect(() => {
     if (props.time < 0) {
+      setShowQuiz(false);
+      props.setTimerActive(false);
       setShowGameover(true);
     }
   }, [props.time])
