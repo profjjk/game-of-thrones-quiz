@@ -25,8 +25,16 @@ function Game() {
 
   return (
     <>
-    <Header time={time} score={score} />
-    <GameBox setTimerActive={setTimerActive} time={time} wrongAnswer={wrongAnswer} updateScore={updateScore} score={score} />
+    <Header score={score} />
+    <GameBox 
+      timerActive={timerActive}
+      setTimerActive={setTimerActive} 
+      time={time} 
+      wrongAnswer={wrongAnswer} 
+      updateScore={updateScore} 
+      score={score} 
+      time={time} 
+    />
     </>
   )
 }

@@ -4,9 +4,7 @@ import Timer from '../Timer';
 
 function Header(props) {
   return (
-    <header className="row">
-      <button id="scoreboard">Scoreboard</button>
-      <Timer time={props.time} />
+    <header>
       <div>
         <h1 id="title">Game of Thrones</h1>
         <h5 id="subtitle">Fan Quiz</h5>

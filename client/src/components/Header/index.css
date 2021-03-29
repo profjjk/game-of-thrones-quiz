@@ -11,15 +11,5 @@
   text-align: center;
   color: #fff;
   margin-top: 1%;
-}
-#scoreboard {
-  font-family: 'Cinzel Decorative', cursive;
-  font-size: 24px;
-  font-weight: 700;
-  background: none;
-  border: none;
-  color: #fff;
-}
-#scoreboard:hover {
-  cursor: pointer;
+  margin-bottom: 6%;
 }

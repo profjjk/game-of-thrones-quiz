@@ -15,9 +15,16 @@ function Quiz(props) {
       }
       setProgress(progress + 1)
     } else {
+      if (event.currentTarget.value == props.quizList[progress].correct) {
+        props.updateScore();
+      } else {
+        props.wrongAnswer();
+      }
       props.displayGameover();
     }
   }
+
+  // Why does it record all of the answers EXCEPT the last one?
 
   return (
     <>

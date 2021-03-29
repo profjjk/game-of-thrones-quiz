@@ -1,8 +1,13 @@
 #gamebox {
-  margin: 8% auto; 
+  margin: 0 auto; 
   padding: 2% 10%;
   background: #fff;
   opacity: 80%;
   border-radius: 10px;
+  width: 90%;
+}
+#timer-area {
+  text-align: center;
+  margin: 8% auto;
   width: 90%;
 }
