@@ -1,8 +1,7 @@
 import React from 'react';
 import './index.css';
-import Timer from '../Timer';
 
-function Header(props) {
+function Header() {
   return (
     <header>
       <div>

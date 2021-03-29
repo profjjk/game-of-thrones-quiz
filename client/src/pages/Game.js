@@ -32,8 +32,7 @@ function Game() {
       time={time} 
       wrongAnswer={wrongAnswer} 
       updateScore={updateScore} 
-      score={score} 
-      time={time} 
+      score={score}
     />
     </>
   )
