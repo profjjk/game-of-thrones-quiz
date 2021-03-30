@@ -4,9 +4,9 @@ import './index.css';
 function Quiz(props) {
   const [progress, setProgress] = useState(0);
 
+  // Record answer, update score, and progress quiz.
   const handleBtnClick = event => {
     event.preventDefault();
-
     if (progress < props.quizList.length - 1) {
       if (event.currentTarget.value == props.quizList[progress].correct) {
         props.updateScore();
@@ -24,8 +24,6 @@ function Quiz(props) {
     }
   }
 
-  // Why does it record all of the answers EXCEPT the last one?
-
   return (
     <>
       <div className="question-area">
@@ -33,10 +31,10 @@ function Quiz(props) {
       </div>
       <hr/>
       <div className="answer-area">
-        {props.quizList[progress].a.map(answer => {
+        {props.quizList[progress].a.map((answer, index) => {
           return (
             <>
-              <button className="btn answer" onClick={handleBtnClick} value={answer} key={answer}>
+              <button className="btn answer" onClick={handleBtnClick} value={answer} key={index}>
                 {answer}
               </button>
               <br/>
