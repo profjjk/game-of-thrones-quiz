@@ -1,7 +1,7 @@
 {
-  "name": "server",
+  "name": "game_of_thrones_quiz",
   "version": "1.0.0",
-  "description": "",
+  "description": "Quiz game build with MERN stack",
   "main": "server.js",
   "scripts": {
     "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
@@ -14,8 +14,8 @@
     "heroku-postbuild": "npm run build"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Jordan Kelly",
+  "license": "MIT",
   "devDependencies": {
     "concurrently": "^4.1.0",
     "nodemon": "^1.18.7"
