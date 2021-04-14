@@ -1,13 +1,13 @@
 # Game of Thrones Quiz
 
 ## Table of Contents
-* [Project Summary](##project-summary)
-* [Technologies Used](##technologies-used)
-* [Example Code](##example-code)
-* [How to Access](##how-to-access)
-* [About Me](##about-me)
-* [Screenshots](##screenshots)
-* [Give Credit Where It's Due](##resource-reference)
+* [Project Summary](#project-summary)
+* [Technologies Used](#technologies-used)
+* [Example Code](#example-code)
+* [How to Access](#how-to-access)
+* [About Me](#about-me)
+* [Screenshots](#screenshots)
+* [Give Credit Where It's Due](#resource-reference)
 ---
 
 ## Project Summary
