@@ -12,3 +12,19 @@
   font-size: 28px;
   margin-left: 20px;
 }
+
+@media only screen and (max-width: 768px) {
+
+} 
+
+@media only screen and (max-width: 476px) {
+  #timer {
+    font-size: 16px;
+    margin-top: 6%;
+    margin-bottom: 2%;
+  }
+  #countdown {
+    font-size: 18px;
+    margin-left: 10px;
+  }
+}

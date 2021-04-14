@@ -17,3 +17,41 @@
   width: 150px;
   margin: 50px;
 }
+
+@media only screen and (max-width: 768px) {
+  #welcome {
+    font-family: 'Cinzel Decorative', cursive;
+    font-size: 24px !important;
+    margin: 30px;
+  }
+  #instructions {
+    font-family: 'Crimson Text', serif;
+    font-size: 22px;
+    margin-top: 30px;
+  }
+  #begin {
+    font-family: 'Crimson Text', serif;
+    font-size: 28px;
+    width: 100px;
+    margin: 30px;
+  }
+} 
+
+@media only screen and (max-width: 476px) {
+  #welcome {
+    font-family: 'Cinzel Decorative', cursive;
+    font-size: 20px !important;
+    margin: 15px;
+  }
+  #instructions {
+    font-family: 'Crimson Text', serif;
+    font-size: 18px;
+    margin-top: 15px;
+  }
+  #begin {
+    font-family: 'Crimson Text', serif;
+    font-size: 22px;
+    width: 100px;
+    margin: 30px;
+  }
+}

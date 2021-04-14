@@ -53,3 +53,16 @@ body {
 .center {
     text-align: center;
 }
+
+
+@media only screen and (max-width: 768px) {
+    .container {
+        padding: 1% 10%;
+    }
+} 
+  
+@media only screen and (max-width: 476px) {
+    .container {
+        padding: 1% 5%;
+    }
+}

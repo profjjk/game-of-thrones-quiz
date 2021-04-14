@@ -13,3 +13,39 @@
   margin-top: 1%;
   margin-bottom: 6%;
 }
+
+@media only screen and (max-width: 768px) {
+  #title {
+    font-family: 'game_of_thronesregular', 'Cinzel Decorative', cursive;
+    font-size: 58px;
+    text-align: center;
+    color: #fff;
+    margin-top: 15%;
+  }
+  #subtitle {
+    font-family: 'Cinzel Decorative', cursive;
+    font-size: 24px;
+    text-align: center;
+    color: #fff;
+    margin-top: 10%;
+    margin-bottom: 10%;
+  }
+} 
+
+@media only screen and (max-width: 476px) {
+  #title {
+    font-family: 'game_of_thronesregular', 'Cinzel Decorative', cursive;
+    font-size: 40px;
+    text-align: center;
+    color: #fff;
+    margin-top: 15%;
+  }
+  #subtitle {
+    font-family: 'Cinzel Decorative', cursive;
+    font-size: 18px;
+    text-align: center;
+    color: #fff;
+    margin-top: 5%;
+    margin-bottom: 10%;
+  }
+}
