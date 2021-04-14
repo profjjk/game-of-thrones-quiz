@@ -2,7 +2,7 @@
   font-family: 'Cinzel Decorative', cursive;
   font-size: 24px;
   font-weight: 700;
-  min-height: 8vh;
+  min-height: 10vh;
   position: relative;
 }
 
@@ -30,7 +30,7 @@ hr {
 @media only screen and (max-width: 768px) {
   .question-area {
     font-family: 'Crimson Text', serif;
-    min-height: 10vh;
+    min-height: 12vh;
     font-size: 24px;
   }
   .answer-area {
