@@ -4,12 +4,12 @@ import Welcome from '../Welcome';
 import Quiz from '../Quiz';
 import GameOver from '../GameOver';
 import ScoreBoard from '../ScoreBoard';
-import API from '../../utils/API';
 import Timer from '../Timer';
+import { questions }  from '../../utils/questions.js';
 
 function GameBox(props) {
   // Database variables.
-  const [quizList, setQuizList] = useState();
+  const [quizList, setQuizList] = useState(questions);
   const [players, setPlayers] = useState();
 
   // Display & hide Quiz component.
@@ -44,15 +44,11 @@ function GameBox(props) {
       let temp = questions[i];
       questions[i] = questions[j];
       questions[j] = temp;
-    };
+    }
     return questions;
   };
   useEffect(() => {
-    API.getQuestions()
-      .then(results => {
-        setQuizList(scrambleQuiz(results.data));
-      })
-      .catch(err => console.error(err));
+    setQuizList(scrambleQuiz(questions));
   }, []);
 
   // Retrieve and limit players from database.
@@ -64,12 +60,6 @@ function GameBox(props) {
       return array;
     }
   }
-  useEffect(() => {
-    API.getPlayers()
-      .then(results => {
-        setPlayers(mostRecent(results.data))
-      }).catch(err => console.error(err));
-  }, [showScoreboard]);
 
   // Show gameover when timer runs out.
   useEffect(() => {

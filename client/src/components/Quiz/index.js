@@ -8,14 +8,14 @@ function Quiz(props) {
   const handleBtnClick = event => {
     event.preventDefault();
     if (progress < props.quizList.length - 1) {
-      if (event.currentTarget.value == props.quizList[progress].correct) {
+      if (event.currentTarget.value === props.quizList[progress].correct) {
         props.updateScore();
       } else {
         props.wrongAnswer();
       }
       setProgress(progress + 1)
     } else {
-      if (event.currentTarget.value == props.quizList[progress].correct) {
+      if (event.currentTarget.value === props.quizList[progress].correct) {
         props.updateScore();
       } else {
         props.wrongAnswer();
@@ -31,16 +31,12 @@ function Quiz(props) {
       </div>
       <hr/>
       <div className="answer-area">
-        {props.quizList[progress].a.map((answer, index) => {
-          return (
-            <>
+        {props.quizList[progress].a.map((answer, index) => (
               <button className="btn answer" onClick={handleBtnClick} value={answer} key={index}>
                 {answer}
               </button>
-              <br/>
-            </>
-          )
-        })}
+            ))
+        }
       </div>
       <hr/>
       <div className="footnote-area">
